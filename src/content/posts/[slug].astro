@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts");
+const post = posts.find((p) => p.slug === Astro.params.slug);
+
+if (!post) throw new Error("Post not found");
+---
+<BaseLayout title={post.data.title}>
+  <article>
+    <h1>{post.data.title}</h1>
+    <p><em>{post.data.date.toDateString()}</em></p>
+    <div innerHTML={post.body} />
+  </article>
+</BaseLayout>
