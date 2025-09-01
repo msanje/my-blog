@@ -1,6 +1,6 @@
 ---
 title: "Hello World"
-date: 2025-09-01
+date: "Sep 1 2025"
 description: "My first blog post"
 ---
 
